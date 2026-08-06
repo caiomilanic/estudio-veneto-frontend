@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { getSocialLinks } from "../services/api";
-import { Logo } from "./Logo";
 import type { SocialLink } from "../types/SocialLink";
 
 export function Footer() {
@@ -20,12 +19,9 @@ export function Footer() {
   return (
     <footer className="bg-charcoal py-12 px-6 md:px-12">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-3">
-        <Logo size={28} />
         <span className="font-display text-surface text-lg tracking-widest uppercase">
-          Studios Vêneto
+          Studios Veneto
         </span>
-      </div>
 
         <div className="flex items-center gap-5">
           {links?.instagramUrl && (
@@ -43,9 +39,17 @@ export function Footer() {
         <p className="font-sans text-surface/50 text-xs text-center md:text-right">
           © 2026 Studios Veneto · MK2 Incorporadora
           <br />
-          Rua João Gbur, 1221 — Santa Cândida, Curitiba - PR
+          CNPJ: 18.154.475/0001-06
         </p>
       </div>
+
+      <p className="text-center font-sans text-surface/30 text-[11px] mt-8">
+        Desenvolvido por{" "}
+        <a href="mailto:caiomilanic@gmail.com?subject=Gostaria%20de%20desenvolver%20um%20site"
+        className="hover:text-terracota transition-colors">
+          caiomilanic
+        </a>
+      </p>
     </footer>
   );
 }

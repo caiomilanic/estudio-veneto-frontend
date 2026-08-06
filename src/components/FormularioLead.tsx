@@ -2,32 +2,33 @@ import { useState, type FormEvent } from "react";
 import { submitLead } from "../services/api";
 
 type Status = "idle" | "loading" | "success" | "error";
-type Errors = { nome?: string; telefone?: string; email?: string };
+type Errors = { nome?: string; telefone?: string; email?: string; preferenciaContato?: string };
+
+const opcoesContato = [
+  { value: "whatsapp", label: "WhatsApp" },
+  { value: "email", label: "E-mail" },
+  { value: "ligacao", label: "Ligação" },
+];
 
 function formatarTelefone(valor: string) {
   const digits = valor.replace(/\D/g, "").slice(0, 11);
-
   if (digits.length <= 2) return digits;
   if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
 
-function validar(nome: string, telefone: string, email: string): Errors {
+function validar(nome: string, telefone: string, email: string, preferenciaContato: string): Errors {
   const errors: Errors = {};
 
-  if (nome.trim().length < 3) {
-    errors.nome = "Digite seu nome completo";
-  }
+  if (nome.trim().length < 3) errors.nome = "Digite seu nome completo";
 
   const telefoneDigits = telefone.replace(/\D/g, "");
-  if (telefoneDigits.length < 10) {
-    errors.telefone = "Telefone incompleto";
-  }
+  if (telefoneDigits.length < 10) errors.telefone = "Telefone incompleto";
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    errors.email = "Digite um e-mail válido";
-  }
+  if (!emailRegex.test(email)) errors.email = "Digite um e-mail válido";
+
+  if (!preferenciaContato) errors.preferenciaContato = "Escolha uma forma de contato";
 
   return errors;
 }
@@ -36,23 +37,25 @@ export function FormularioLead() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
+  const [preferenciaContato, setPreferenciaContato] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    const validationErrors = validar(nome, telefone, email);
+    const validationErrors = validar(nome, telefone, email, preferenciaContato);
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
     setStatus("loading");
     try {
-      await submitLead({ nome, telefone, email });
+      await submitLead({ nome, telefone, email, preferenciaContato });
       setStatus("success");
       setNome("");
       setTelefone("");
       setEmail("");
+      setPreferenciaContato("");
       setErrors({});
     } catch (err) {
       console.error("Erro ao enviar lead:", err);
@@ -68,7 +71,7 @@ export function FormularioLead() {
         </span>
 
         <h2 className="font-display text-surface text-4xl md:text-5xl mt-3">
-          Quero conhecer o Studios Vêneto
+          Quero conhecer o Studios Veneto
         </h2>
 
         <p className="font-sans text-surface/70 text-base mt-4 max-w-lg mx-auto">
@@ -121,6 +124,33 @@ export function FormularioLead() {
               />
               {errors.email && <p className="text-terracota text-xs mt-1 font-sans">{errors.email}</p>}
             </div>
+
+            <fieldset>
+              <legend className="font-sans text-surface/70 text-sm mb-2">Prefere ser contatado por:</legend>
+              <div className="flex gap-2">
+                {opcoesContato.map((opcao) => (
+                  <label
+                    key={opcao.value}
+                    className={`flex-1 text-center cursor-pointer rounded-lg px-3 py-3 text-sm font-sans border transition-colors ${
+                      preferenciaContato === opcao.value
+                        ? "bg-terracota border-terracota text-surface"
+                        : "bg-surface/5 border-surface/20 text-surface/70 hover:border-surface/40"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="preferenciaContato"
+                      value={opcao.value}
+                      checked={preferenciaContato === opcao.value}
+                      onChange={(e) => setPreferenciaContato(e.target.value)}
+                      className="sr-only"
+                    />
+                    {opcao.label}
+                  </label>
+                ))}
+              </div>
+              {errors.preferenciaContato && <p className="text-terracota text-xs mt-1 font-sans">{errors.preferenciaContato}</p>}
+            </fieldset>
 
             <button
               type="submit"

@@ -36,7 +36,12 @@ export async function getSocialLinks(): Promise<SocialLink> {
   return res.json();
 }
 
-export async function submitLead(data: { nome: string; telefone: string; email: string }): Promise<void> {
+export async function submitLead(data: {
+  nome: string;
+  telefone: string;
+  email: string;
+  preferenciaContato: string;
+}): Promise<void> {
   const res = await fetch(`${API_URL}/api/leads`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
