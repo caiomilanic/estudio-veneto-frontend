@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-base: #F7F3EC;
+  --color-charcoal: #2A2721;
+  --color-terracota: #B9764F;
+  --color-oliva: #565A40;
+  --color-madeira: #D9C3A0;
+  --color-surface: #FDFBF7;
+
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", sans-serif;
+}
