@@ -42,7 +42,7 @@ export function Galeria() {
             >
               <img
                 src={photo.url}
-                alt={photo.caption || "Foto do Studios Veneto"}
+                alt={photo.caption || "Foto do Studios Vêneto"}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               {photo.caption && (
@@ -75,7 +75,7 @@ export function Galeria() {
           <figure className="max-w-4xl w-full">
             <img
               src={selected.url}
-              alt={selected.caption || "Foto do Studios Veneto"}
+              alt={selected.caption || "Foto do Studios Vêneto"}
               className="w-full max-h-[80vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />

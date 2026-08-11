@@ -56,9 +56,9 @@ export function Precos() {
         
         <div className="flex items-center justify-center gap-2 mt-8 text-madeira font-sans text-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-madeira" />
-          Entrega prevista para outubro de 2026
+          Entrega prevista para dezembro de 2026
         </div>
-        
+
         <p className="font-sans text-surface/50 text-xs mt-8 text-center">
           Consulte a disponibilidade das unidades e as condições de pagamento.
         </p>

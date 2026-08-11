@@ -23,13 +23,13 @@ export function Footer() {
         <div className="flex items-center gap-3">
         <Logo size={28} />
         <span className="font-display text-surface text-lg tracking-widest uppercase">
-          Studios Veneto
+          Studios Vêneto
         </span>
       </div>
 
         <div className="flex items-center gap-5">
           {links?.instagramUrl && (
-            <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Veneto" className="text-surface/70 hover:text-terracota transition-colors">
+            <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Vêneto" className="text-surface/70 hover:text-terracota transition-colors">
               <SiInstagram size={20} />
             </a>
           )}
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
 
         <p className="font-sans text-surface/50 text-xs text-center md:text-right">
-          © 2026 Studios Veneto · MK2 Incorporadora
+          © 2026 Studios Vêneto · MK2 Incorporadora
           <br />
           CNPJ: 18.154.475/0001-06
         </p>

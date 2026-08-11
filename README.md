@@ -1,8 +1,8 @@
-# ⚛️ Studios Veneto — Frontend
+# ⚛️ Studios Vêneto — Frontend
 
-**Landing page** do empreendimento Studios Veneto (MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
+**Landing page** do empreendimento Studios Vêneto (MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
 
-> 🔗 Repositório do backend: [`estudio-veneto-backend`](https://github.com/caiomilanic/estudio-veneto-backend)
+> 🔗 Repositório do backend: [`estudio-vêneto-backend`](https://github.com/caiomilanic/estudio-vêneto-backend)
 
 ---
 
@@ -129,13 +129,13 @@ Configuração em `src/index.css`:
 
 ### Pré-requisitos
 - 📦 Node.js 24 (LTS)
-- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-veneto-backend))
+- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-vêneto-backend))
 
 ### Passos
 
 ```bash
-git clone https://github.com/caiomilanic/estudio-veneto-frontend.git
-cd estudio-veneto-frontend
+git clone https://github.com/caiomilanic/estudio-vêneto-frontend.git
+cd estudio-vêneto-frontend
 
 npm install
 

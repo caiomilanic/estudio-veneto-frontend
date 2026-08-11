@@ -43,7 +43,7 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             {links?.instagramUrl && (
-              <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Veneto" className="text-surface/90 hover:text-terracota transition-colors">
+              <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Vêneto" className="text-surface/90 hover:text-terracota transition-colors">
                 <SiInstagram size={18} />
               </a>
             )}
@@ -74,7 +74,7 @@ export function Header() {
 
           <div className="flex items-center gap-5 pt-2 border-t border-surface/10">
             {links?.instagramUrl && (
-              <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Veneto" className="text-surface/90 hover:text-terracota transition-colors mt-2">
+              <a href={links.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studios Vêneto" className="text-surface/90 hover:text-terracota transition-colors mt-2">
                 <SiInstagram size={20} />
               </a>
             )}

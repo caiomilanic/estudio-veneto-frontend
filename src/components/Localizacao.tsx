@@ -12,7 +12,7 @@ export function Localizacao() {
 
         <p className="font-sans text-charcoal/80 text-base md:text-lg mt-6 max-w-2xl leading-relaxed">
           Quando falamos em imóvel, localização sempre faz diferença. No Studios
-          Veneto, você estará a apenas três quadras do Terminal Santa Cândida,
+          Vêneto, você estará a apenas três quadras do Terminal Santa Cândida,
           em uma região completa, com fácil acesso ao transporte público,
           comércio, serviços e importantes vias da cidade.
         </p>
@@ -23,7 +23,7 @@ export function Localizacao() {
 
         <div className="mt-10 rounded-2xl overflow-hidden border border-madeira/40">
           <iframe
-            title="Localização do Studios Veneto"
+            title="Localização do Studios Vêneto"
             src="https://www.google.com/maps?q=Rua+Jo%C3%A3o+Gbur,+1221+-+Santa+C%C3%A2ndida,+Curitiba+-+PR&output=embed"
             width="100%"
             height="420"

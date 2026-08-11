@@ -19,7 +19,7 @@ export function Diferenciais() {
         </span>
 
         <h2 className="font-display text-surface text-4xl md:text-5xl mt-3">
-          Diferenciais do Studios Veneto
+          Diferenciais do Studios Vêneto
         </h2>
 
         <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-12">

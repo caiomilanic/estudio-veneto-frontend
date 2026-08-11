@@ -11,7 +11,7 @@ export function ParaMorarInvestir() {
           </h3>
           <p className="font-sans text-charcoal/80 text-base mt-5 leading-relaxed">
             Se você procura seu primeiro imóvel ou deseja viver em uma região
-            completa, o Studios Veneto oferece praticidade para o dia a dia.
+            completa, o Studios Vêneto oferece praticidade para o dia a dia.
             Morar próximo ao Terminal Santa Cândida significa ter acesso
             rápido ao transporte coletivo, supermercados, comércio, serviços
             e lazer, reduzindo deslocamentos e trazendo mais comodidade para

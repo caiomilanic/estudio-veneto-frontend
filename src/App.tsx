@@ -14,11 +14,11 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Localizacao />
+      <Galeria />
       <ParaMorarInvestir />
       <Diferenciais />
-      <Galeria />
-      <Precos />
+      <Localizacao />
+      <Precos /> 
       <FormularioLead />
       <SobreIncorporadora />
       <Footer />
