@@ -29,29 +29,39 @@ export function Precos() {
         </h2>
 
         <div className="grid sm:grid-cols-2 gap-6 mt-12">
-          {units.map((unit, index) => (
-            <div
-              key={index}
-              className="bg-surface rounded-2xl p-8 border-t-4 border-terracota"
-            >
-              <h3 className="font-display text-charcoal text-2xl">{unit.tipo}</h3>
+        {units.map((unit, index) => (
+          <div key={index} className="bg-surface rounded-2xl p-8 border-t-4 border-terracota">
+            <h3 className="font-display text-charcoal text-2xl">{unit.tipo}</h3>
 
-              <dl className="mt-6 space-y-3 font-sans text-sm">
+            <dl className="mt-6 space-y-3 font-sans text-sm">
+              <div className="flex justify-between border-b border-madeira/30 pb-3">
+                <dt className="text-charcoal/60">Área privativa</dt>
+                <dd className="text-charcoal font-medium">{unit.areaPrivativa}</dd>
+              </div>
+              <div className="flex justify-between border-b border-madeira/30 pb-3">
+                <dt className="text-charcoal/60">Área total</dt>
+                <dd className="text-charcoal font-medium">{unit.areaTotal}</dd>
+              </div>
+              {unit.areaJardim && (
                 <div className="flex justify-between border-b border-madeira/30 pb-3">
-                  <dt className="text-charcoal/60">Metragem</dt>
-                  <dd className="text-charcoal font-medium">{unit.metragem}m²</dd>
+                  <dt className="text-charcoal/60">Área do jardim</dt>
+                  <dd className="text-charcoal font-medium">{unit.areaJardim}</dd>
                 </div>
-                <div className="flex justify-between pb-3">
-                  <dt className="text-charcoal/60">A partir de</dt>
-                  <dd className="text-charcoal font-medium text-lg">{formatarPreco(unit.precoAPartirDe)}</dd>
-                </div>
-              </dl>
-
-              <a href="#contato" className="block text-center mt-6 bg-terracota text-surface font-sans text-sm px-6 py-3 rounded-full hover:bg-terracota/90 transition-colors">
-                Consultar disponibilidade
-              </a>
-            </div>
-          ))}
+              )}
+              <div className="flex justify-between pb-3">
+                <dt className="text-charcoal/60">A partir de</dt>
+                <dd className="text-charcoal font-medium text-lg">{formatarPreco(unit.precoAPartirDe)}</dd>
+              </div>
+            </dl>
+            
+            <p className="font-sans text-surface/40 text-xs mt-6 text-center max-w-md mx-auto">
+              Área total corresponde à soma da área privativa com a fração de área de uso comum do empreendimento.
+            </p>
+            <a href="#contato" className="block text-center mt-6 bg-terracota text-surface font-sans text-sm px-6 py-3 rounded-full hover:bg-terracota/90 transition-colors">
+              Consultar disponibilidade
+            </a>
+          </div>
+        ))}
         </div>
         
         <div className="flex items-center justify-center gap-2 mt-8 text-madeira font-sans text-sm">

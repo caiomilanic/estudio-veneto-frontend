@@ -1,5 +1,7 @@
 export interface Unit {
   tipo: string;
-  metragem: number;
+  areaPrivativa: string;
+  areaTotal: string;
+  areaJardim: string | null;
   precoAPartirDe: number;
 }
