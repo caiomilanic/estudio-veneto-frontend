@@ -41,7 +41,7 @@ export function Footer() {
         </div>
     
         <p className="font-sans text-surface/50 text-xs text-center md:text-right">
-          © 2026 Studios Veneto
+          © 2026 Studios Vêneto
           <br />
           MK2 Incorporadora · CNPJ: 18.154.475/0001-06
           <br />

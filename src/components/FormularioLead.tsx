@@ -69,7 +69,7 @@ export function FormularioLead() {
         </span>
 
         <h2 className="font-display text-surface text-4xl md:text-5xl mt-3">
-          Quero conhecer o Studios Veneto
+          Quero conhecer o Studios Vêneto
         </h2>
 
         <p className="font-sans text-surface/70 text-base mt-4 max-w-lg mx-auto">

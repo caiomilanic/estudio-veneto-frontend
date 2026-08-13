@@ -5,7 +5,7 @@ export function Hero() {
     <section className="relative min-h-[100svh] [@media(max-height:500px)]:min-h-fit flex items-end overflow-hidden">
       <img
         src={fachada}
-        alt="Fachada do Studios Veneto, no Santa Cândida, Curitiba"
+        alt="Fachada do Studios Vêneto, no Santa Cândida, Curitiba"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -21,7 +21,7 @@ export function Hero() {
         </span>
 
         <h1 className="font-display text-surface text-5xl md:text-7xl [@media(max-height:500px)]:text-3xl leading-[0.95] mt-4">
-          Studios Veneto
+          Studios Vêneto
         </h1>
 
         <p className="font-sans text-surface/80 text-base md:text-lg [@media(max-height:500px)]:text-sm mt-6 max-w-xl">

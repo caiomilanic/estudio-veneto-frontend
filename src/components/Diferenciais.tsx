@@ -31,7 +31,7 @@ export function Diferenciais() {
         </span>
 
         <h2 className="font-display text-surface text-4xl md:text-5xl mt-3">
-          Diferenciais do Studios Veneto
+          Diferenciais do Studios Vêneto
         </h2>
 
         {status === "loading" && (

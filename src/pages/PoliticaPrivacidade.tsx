@@ -1,5 +1,5 @@
 /**
- * Página de Política de Privacidade — Studios Veneto / RAC Imóveis
+ * Página de Política de Privacidade — Studios Vêneto / RAC Imóveis
  *
  * Versão definitiva — publicada em produção.
  */
@@ -45,7 +45,7 @@ interface SecaoProps {
         <header className="border-b border-charcoal/10 px-6 py-10 sm:py-14">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm tracking-wide uppercase text-terracota mb-2">
-              Studios Veneto — RAC Imóveis
+              Studios Vêneto — RAC Imóveis
             </p>
             <h1 className="font-display text-3xl sm:text-4xl text-charcoal">
               Política de Privacidade
@@ -72,7 +72,7 @@ interface SecaoProps {
   
           <main className="space-y-12">
             <p className="text-charcoal/80 leading-relaxed">
-              Esta política explica como a <strong>R. A. C. Imóveis Ltda</strong> coleta, usa e protege os dados pessoais fornecidos por você ao preencher o formulário de contato da landing page do <strong>Studios Veneto</strong>, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
+              Esta política explica como a <strong>R. A. C. Imóveis Ltda</strong> coleta, usa e protege os dados pessoais fornecidos por você ao preencher o formulário de contato da landing page do <strong>Studios Vêneto</strong>, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
             </p>
   
             <Secao numero="01" titulo="Quem somos">
@@ -94,7 +94,7 @@ interface SecaoProps {
             <Secao numero="03" titulo="Para que usamos seus dados">
               <p>Os dados fornecidos são usados exclusivamente para:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Entrar em contato com você sobre o empreendimento Studios Veneto (informações, disponibilidade de unidades, condições de pagamento)</li>
+                <li>Entrar em contato com você sobre o empreendimento Studios Vêneto (informações, disponibilidade de unidades, condições de pagamento)</li>
                 <li>Encaminhar seu contato à equipe comercial responsável pelo atendimento</li>
                 <li>Enviar comunicações relacionadas ao empreendimento, quando aplicável</li>
               </ul>

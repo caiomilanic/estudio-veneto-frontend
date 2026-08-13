@@ -1,9 +1,9 @@
-# ⚛️ Studios Veneto — Frontend
+# ⚛️ Studios Vêneto — Frontend
 
-**Landing page** do empreendimento Studios Veneto (MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
+**Landing page** do empreendimento Studios Vêneto (MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
 
-> 🔗 Repositório do backend: [`estudio-veneto-backend`](https://github.com/caiomilanic/estudio-veneto-backend)
-> 🌐 Produção: hospedado na Vercel · domínio próprio [`studiosveneto.com.br`](https://studiosveneto.com.br) em configuração (DNS)
+> 🔗 Repositório do backend: [`estudio-Vêneto-backend`](https://github.com/caiomilanic/estudio-Vêneto-backend)
+> 🌐 Produção: hospedado na Vercel · domínio próprio [`studiosVêneto.com.br`](https://studiosVêneto.com.br) em configuração (DNS)
 
 ---
 
@@ -121,13 +121,13 @@ Paleta e tipografia derivadas diretamente dos materiais reais do empreendimento 
 
 ### Pré-requisitos
 - 📦 Node.js 24 (LTS)
-- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-veneto-backend))
+- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-Vêneto-backend))
 
 ### Passos
 
 ```bash
-git clone https://github.com/caiomilanic/estudio-veneto-frontend.git
-cd estudio-veneto-frontend
+git clone https://github.com/caiomilanic/estudio-Vêneto-frontend.git
+cd estudio-Vêneto-frontend
 
 npm install
 
@@ -144,10 +144,10 @@ O site sobe em `http://localhost:5173`.
 Hospedado na **Vercel**, com deploy automático a cada push na branch `main`.
 
 - Build detectado automaticamente (Vite) — sem configuração manual de build/output directory
-- Domínio próprio `studiosveneto.com.br` registrado no Registro.br, DNS em configuração:
+- Domínio próprio `studiosVêneto.com.br` registrado no Registro.br, DNS em configuração:
   - `A` (`@`) → IP da Vercel
   - `CNAME` (`www`) → destino fornecido pela Vercel
-  - Produção "oficial" aponta para `www.studiosveneto.com.br` (domínio raiz redireciona para o `www`)
+  - Produção "oficial" aponta para `www.studiosVêneto.com.br` (domínio raiz redireciona para o `www`)
 
 ---
 
@@ -175,7 +175,7 @@ VITE_API_URL=http://localhost:8080
 - [x] Cards de tipologia com área privativa, total e jardim, alinhados
 - [x] CNPJ e crédito de desenvolvimento no footer
 - [x] Deploy em produção na Vercel
-- [x] Domínio `studiosveneto.com.br` registrado
+- [x] Domínio `studiosVêneto.com.br` registrado
 
 ### 🚧 Pendente
 - [ ] 🌐 Finalizar propagação DNS do domínio próprio
