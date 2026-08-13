@@ -39,11 +39,13 @@ export function Footer() {
             </a>
           )}
         </div>
-
+    
         <p className="font-sans text-surface/50 text-xs text-center md:text-right">
-          © 2026 Studios Vêneto · MK2 Incorporadora
+          © 2026 Studios Veneto
           <br />
-          CNPJ: 18.154.475/0001-06
+          MK2 Incorporadora · CNPJ: 18.154.475/0001-06
+          <br />
+          RAC Imóveis · CNPJ: 11.342.958/0001-87
         </p>
       </div>
 

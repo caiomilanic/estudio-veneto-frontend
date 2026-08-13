@@ -81,6 +81,10 @@ export function Galeria() {
         )}
       </div>
 
+      <p className="font-sans text-charcoal/50 text-xs mt-6 text-center">
+      Imagens meramente ilustrativas. Perspectivas artísticas sujeitas a alterações. Os móveis, utensílios e objetos de decoração não fazem parte do contrato de compra e venda.
+      </p>
+
       {selected && (
         <div className="fixed inset-0 z-50 bg-charcoal/95 flex items-center justify-center p-6 md:p-12" onClick={() => setSelected(null)}>
           <button onClick={() => setSelected(null)} className="absolute top-6 right-6 text-surface/80 hover:text-surface font-sans text-sm tracking-wide" aria-label="Fechar">

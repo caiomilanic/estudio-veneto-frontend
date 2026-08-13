@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { submitLead } from "../services/api";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -19,17 +20,12 @@ function formatarTelefone(valor: string) {
 
 function validar(nome: string, telefone: string, email: string, preferenciaContato: string): Errors {
   const errors: Errors = {};
-
   if (nome.trim().length < 3) errors.nome = "Digite seu nome completo";
-
   const telefoneDigits = telefone.replace(/\D/g, "");
   if (telefoneDigits.length < 10) errors.telefone = "Telefone incompleto";
-
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) errors.email = "Digite um e-mail válido";
-
   if (!preferenciaContato) errors.preferenciaContato = "Escolha uma forma de contato";
-
   return errors;
 }
 
@@ -38,6 +34,7 @@ export function FormularioLead() {
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
   const [preferenciaContato, setPreferenciaContato] = useState("");
+  const [aceitaPolitica, setAceitaPolitica] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -46,7 +43,7 @@ export function FormularioLead() {
 
     const validationErrors = validar(nome, telefone, email, preferenciaContato);
     setErrors(validationErrors);
-    if (Object.keys(validationErrors).length > 0) return;
+    if (Object.keys(validationErrors).length > 0 || !aceitaPolitica) return;
 
     setStatus("loading");
     try {
@@ -56,6 +53,7 @@ export function FormularioLead() {
       setTelefone("");
       setEmail("");
       setPreferenciaContato("");
+      setAceitaPolitica(false);
       setErrors({});
     } catch (err) {
       console.error("Erro ao enviar lead:", err);
@@ -71,7 +69,7 @@ export function FormularioLead() {
         </span>
 
         <h2 className="font-display text-surface text-4xl md:text-5xl mt-3">
-          Quero conhecer o Studios Vêneto
+          Quero conhecer o Studios Veneto
         </h2>
 
         <p className="font-sans text-surface/70 text-base mt-4 max-w-lg mx-auto">
@@ -152,9 +150,30 @@ export function FormularioLead() {
               {errors.preferenciaContato && <p className="text-terracota text-xs mt-1 font-sans">{errors.preferenciaContato}</p>}
             </fieldset>
 
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={aceitaPolitica}
+                onChange={(e) => setAceitaPolitica(e.target.checked)}
+                className="mt-0.5 accent-terracota w-4 h-4 cursor-pointer"
+              />
+              <span className="font-sans text-surface/60 text-xs leading-relaxed">
+                Li e aceito a{" "}
+                <Link
+                  to="/politica-de-privacidade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-terracota transition-colors"
+                >
+                  política de privacidade
+                </Link>{" "}
+                e autorizo o contato sobre este empreendimento.
+              </span>
+            </label>
+
             <button
               type="submit"
-              disabled={status === "loading"}
+              disabled={status === "loading" || !aceitaPolitica}
               className="mt-4 bg-terracota text-surface font-sans text-sm px-6 py-4 rounded-full hover:bg-terracota/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "loading" ? "Enviando..." : "Receber informações"}

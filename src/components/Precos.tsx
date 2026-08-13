@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getUnits } from "../services/api";
 import type { Unit } from "../types/Unit";
 import { Skeleton } from "./Skeleton";
+import { Link } from "react-router-dom";
 
 type Status = "loading" | "success" | "error";
 
@@ -92,7 +93,13 @@ export function Precos() {
             </p>
 
             <p className="font-sans text-surface/50 text-xs mt-8 text-center">
-              Consulte a disponibilidade das unidades e as condições de pagamento.
+              Consulte a disponibilidade das unidades e as condições de pagamento.{" "}
+              <Link
+                to="/politica-de-privacidade#secao-12"
+                className="underline hover:text-terracota transition-colors"
+              >
+                Avisos legais
+              </Link>
             </p>
           </>
         )}
