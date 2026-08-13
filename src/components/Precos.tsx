@@ -68,16 +68,12 @@ export function Precos() {
                   <h3 className="font-display text-charcoal text-2xl">{unit.tipo}</h3>
                   <dl className="mt-6 space-y-3 font-sans text-sm">
                     <div className="flex justify-between border-b border-madeira/30 pb-3">
-                      <dt className="text-charcoal/60">Área privativa</dt>
-                      <dd className="text-charcoal font-medium">{unit.areaPrivativa}</dd>
-                    </div>
-                    <div className="flex justify-between border-b border-madeira/30 pb-3">
                       <dt className="text-charcoal/60">Área total *</dt>
-                      <dd className="text-charcoal font-medium">{unit.areaTotal}</dd>
+                      <dd className="text-charcoal font-medium">a partir de {unit.areaTotal}</dd>
                     </div>
                     <div className={`flex justify-between border-b border-madeira/30 pb-3 ${!unit.areaJardim ? "opacity-0" : ""}`}>
                       <dt className="text-charcoal/60">Área do garden privativo</dt>
-                      <dd className="text-charcoal font-medium">{unit.areaJardim || "—"}</dd>
+                      <dd className="text-charcoal font-medium">{unit.areaJardim ? `a partir de ${unit.areaJardim}` : "—"}</dd>
                     </div>
                     <div className="flex justify-between pb-3">
                       <dt className="text-charcoal/60">A partir de</dt>
@@ -92,7 +88,7 @@ export function Precos() {
             </div>
 
             <p className="font-sans text-surface/40 text-xs mt-6 text-center max-w-md mx-auto">
-              * Área total corresponde à soma da área privativa com a fração de área de uso comum do empreendimento.
+              * Área total corresponde à soma da área privativa coberta com a fração de área de uso comum do empreendimento.
             </p>
 
             <p className="font-sans text-surface/50 text-xs mt-8 text-center">
