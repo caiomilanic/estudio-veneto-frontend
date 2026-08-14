@@ -1,9 +1,9 @@
-# ⚛️ Studios Vêneto — Frontend
+# ⚛️ Studios Veneto — Frontend
 
-**Landing page** do empreendimento Studios Vêneto (MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
+**Landing page** do empreendimento Studios Veneto (RAC Imóveis / MK2 Incorporadora), construída em React + TypeScript, com identidade visual autoral derivada dos materiais reais do prédio — fachada, acabamentos e a placa de identificação do empreendimento.
 
-> 🔗 Repositório do backend: [`estudio-Vêneto-backend`](https://github.com/caiomilanic/estudio-Vêneto-backend)
-> 🌐 Produção: hospedado na Vercel · domínio próprio [`studiosVêneto.com.br`](https://studiosVêneto.com.br) em configuração (DNS)
+> 🔗 Repositório do backend: [`estudio-veneto-backend`](https://github.com/caiomilanic/estudio-veneto-backend)
+> 🌐 **Produção:** [`www.studiosveneto.com.br`](https://www.studiosveneto.com.br) — 🎉 projeto no ar, domínio próprio ativo
 
 ---
 
@@ -34,28 +34,30 @@ Landing page de captação de leads, com todo o conteúdo (textos, preços, dife
 | ⚛️ **React 18** | Biblioteca de UI |
 | 🔷 **TypeScript** | Tipagem estática |
 | ⚡ **Vite** | Build tool e dev server |
+| 🧭 **React Router** | Roteamento (landing + página de Política de Privacidade) |
 | 🎨 **Tailwind CSS v4** | Estilização utility-first (config CSS-first via `@theme`) |
 | 🖼️ **[Cloudinary](https://cloudinary.com)** | Armazenamento e otimização das fotos do empreendimento |
 | 🗺️ **Google Maps Embed** | Mapa de localização, sem custo/API key |
 | 🎯 **[Simple Icons](https://www.npmjs.com/package/@icons-pack/react-simple-icons)** | Logos de marca (Instagram, WhatsApp) |
 | 🧹 **Oxlint** | Linter (padrão do create-vite) |
-| ▲ **Vercel** | Hospedagem |
+| ▲ **Vercel** | Hospedagem, com domínio próprio e SSL |
 
 ---
 
 ## ✨ Funcionalidades
 
-- 🏠 10 seções: Header, Hero, Localização, Para Morar/Investir, Diferenciais, Galeria, Preços, Formulário de Lead, Sobre a Incorporadora e Footer
-- 📝 Formulário de lead com validação client-side (nome, telefone com máscara automática, e-mail) e **seletor de preferência de contato** (WhatsApp, e-mail ou ligação)
-- 💀 **Estados de carregamento (skeleton)** nas seções que dependem da API — evita seções "somem da tela" durante cold start do backend
+- 🏠 10 seções na landing: Header, Hero, Localização, Para Morar/Investir, Diferenciais, Galeria, Preços, Formulário de Lead, Sobre (MK2 + RAC lado a lado) e Footer
+- 📝 Formulário de lead com validação client-side (nome, telefone com máscara automática, e-mail), **seletor de preferência de contato** (WhatsApp, e-mail ou ligação) e **checkbox de consentimento LGPD** vinculado à Política de Privacidade — botão de envio só habilita com o aceite marcado
+- 📄 **Página própria de Política de Privacidade** (`/politica-de-privacidade`), com índice navegável por seção, incluindo aviso de transferência internacional de dados (Neon, Brevo) e seção de avisos legais
+- 💀 Estados de carregamento (skeleton) nas seções que dependem da API
 - 🖼️ Galeria com **lightbox** — clique em qualquer foto pra ampliar, fecha com `Esc`, clique fora, ou botão
 - ⚖️ Disclaimer de "imagens meramente ilustrativas" nas fotos de renderização
-- 💰 Cards de tipologia com área privativa, área total e área de jardim (quando aplicável), alinhados independente de qual card tem mais linhas de informação
-- 📱 Totalmente responsivo, com menu hambúrguer dedicado para mobile
+- 💰 Cards de tipologia com área total e área de jardim (quando aplicável), sempre alinhados entre si
+- 📱 Responsivo, incluindo tratamento específico para celular em orientação paisagem (media query por altura de viewport)
 - 🗺️ Mapa incorporado via iframe (sem API key)
 - 💬 Link de WhatsApp gerado dinamicamente com mensagem pré-preenchida (`wa.me`)
-- 🏢 CNPJ da incorporadora e crédito de desenvolvimento (com `mailto:` e assunto pré-preenchido) no footer
-- 🔍 Meta tags de SEO, Open Graph e Twitter Card configuradas para preview em redes sociais
+- 🏢 CNPJ da MK2 e da RAC, e crédito de desenvolvimento (com `mailto:` e assunto pré-preenchido) no footer
+- 🔍 Meta tags de SEO, Open Graph e Twitter Card configuradas com a URL de produção real
 
 ---
 
@@ -65,19 +67,23 @@ Landing page de captação de leads, com todo o conteúdo (textos, preços, dife
 src/
 ├── 📁 assets/                    → imagens estruturais do design (fachada do Hero)
 │
+├── 📁 pages/
+│   ├── Home.tsx                    🏠 composição da landing page completa
+│   └── PoliticaPrivacidade.tsx     📄 política de privacidade, com índice por seção
+│
 ├── 📁 components/
 │   ├── Header.tsx                 🧭 navegação, ícones sociais, menu mobile
 │   ├── Logo.tsx                    🔖 monograma "SV" reutilizável
 │   ├── Skeleton.tsx                💀 bloco de carregamento reutilizável
-│   ├── Hero.tsx                    🖼️ fachada real + CTA + badge de entrega
+│   ├── Hero.tsx                    🖼️ fachada real + CTA + badge de entrega (com tratamento p/ paisagem)
 │   ├── Localizacao.tsx             📍 texto + mapa incorporado
 │   ├── ParaMorarInvestir.tsx       🏠 dois blocos: morar vs. investir
 │   ├── Diferenciais.tsx            ✅ lista dinâmica via API (com skeleton)
 │   ├── Galeria.tsx                 🖼️ fotos + lightbox + disclaimer (com skeleton)
-│   ├── Precos.tsx                  💰 cards comparativos das tipologias (com skeleton)
-│   ├── FormularioLead.tsx          📝 captação com validação, máscara e preferência de contato
-│   ├── SobreIncorporadora.tsx      🏢 texto institucional (com skeleton)
-│   └── Footer.tsx                  🔗 logo, redes sociais, CNPJ, crédito de desenvolvimento
+│   ├── Precos.tsx                  💰 cards comparativos, com link para avisos legais
+│   ├── FormularioLead.tsx          📝 captação com validação, máscara, preferência de contato e consentimento LGPD
+│   ├── SobreIncorporadora.tsx      🏢 MK2 e RAC lado a lado (com skeleton)
+│   └── Footer.tsx                  🔗 logo, redes sociais, CNPJs, crédito de desenvolvimento
 │
 ├── 📁 services/
 │   └── api.ts                      🔌 todas as chamadas fetch ao backend
@@ -86,10 +92,10 @@ src/
 │   ├── Content.ts
 │   ├── Photo.ts
 │   ├── Highlight.ts
-│   ├── Unit.ts                      tipo, areaPrivativa, areaTotal, areaJardim, precoAPartirDe
+│   ├── Unit.ts
 │   └── SocialLink.ts
 │
-├── App.tsx                         🧩 composição de todas as seções
+├── App.tsx                         🧩 definição das rotas (React Router)
 ├── main.tsx
 └── index.css                       🎨 tema Tailwind (@theme) + fontes
 ```
@@ -121,13 +127,13 @@ Paleta e tipografia derivadas diretamente dos materiais reais do empreendimento 
 
 ### Pré-requisitos
 - 📦 Node.js 24 (LTS)
-- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-Vêneto-backend))
+- ☕ Backend rodando em `http://localhost:8080` ([veja o repositório do backend](https://github.com/caiomilanic/estudio-veneto-backend))
 
 ### Passos
 
 ```bash
-git clone https://github.com/caiomilanic/estudio-Vêneto-frontend.git
-cd estudio-Vêneto-frontend
+git clone https://github.com/caiomilanic/estudio-veneto-frontend.git
+cd estudio-veneto-frontend
 
 npm install
 
@@ -143,11 +149,12 @@ O site sobe em `http://localhost:5173`.
 
 Hospedado na **Vercel**, com deploy automático a cada push na branch `main`.
 
+- **URL de produção:** `https://www.studiosveneto.com.br` (domínio raiz redireciona automaticamente para o `www`)
 - Build detectado automaticamente (Vite) — sem configuração manual de build/output directory
-- Domínio próprio `studiosVêneto.com.br` registrado no Registro.br, DNS em configuração:
+- Domínio próprio `studiosveneto.com.br` registrado no Registro.br, com DNS totalmente propagado:
   - `A` (`@`) → IP da Vercel
   - `CNAME` (`www`) → destino fornecido pela Vercel
-  - Produção "oficial" aponta para `www.studiosVêneto.com.br` (domínio raiz redireciona para o `www`)
+- SSL emitido e renovado automaticamente pela Vercel
 
 ---
 
@@ -156,10 +163,15 @@ Hospedado na **Vercel**, com deploy automático a cada push na branch `main`.
 Crie um arquivo `.env` na raiz do projeto (ou configure em **Settings → Environment Variables** na Vercel para produção):
 
 ```bash
+VITE_API_URL=https://api.studiosveneto.com.br
+```
+
+Em desenvolvimento local, aponte para o backend local:
+```bash
 VITE_API_URL=http://localhost:8080
 ```
 
-> ⚠️ No Vite, variáveis expostas ao cliente **precisam** começar com `VITE_`.
+> ⚠️ No Vite, variáveis expostas ao cliente **precisam** começar com `VITE_`. Alterar essa variável na Vercel exige um novo deploy para ter efeito — não basta salvar (`git commit --allow-empty` força isso, se necessário).
 
 > 🔒 O `.env` já está no `.gitignore` — nunca commite valores reais de produção.
 
@@ -169,18 +181,20 @@ VITE_API_URL=http://localhost:8080
 
 ### ✅ Concluído
 - [x] 10 seções completas, consumindo dados reais da API
-- [x] Formulário de lead com validação, máscara de telefone e preferência de contato
+- [x] Formulário de lead com validação, máscara de telefone, preferência de contato e consentimento LGPD
+- [x] Página própria de Política de Privacidade, com roteamento via React Router
+- [x] Seção "Sobre" com MK2 e RAC lado a lado
 - [x] Galeria com lightbox e disclaimer legal
 - [x] Estados de skeleton/loading nas seções dependentes de API
-- [x] Cards de tipologia com área privativa, total e jardim, alinhados
-- [x] CNPJ e crédito de desenvolvimento no footer
-- [x] Deploy em produção na Vercel
-- [x] Domínio `studiosVêneto.com.br` registrado
+- [x] Cards de tipologia simplificados (área total + jardim), alinhados
+- [x] CNPJs e crédito de desenvolvimento no footer
+- [x] Correção de layout do Hero em mobile paisagem
+- [x] Deploy em produção na Vercel, com domínio próprio e SSL
+- [x] `VITE_API_URL` e `og:url` apontando para os endereços finais de produção
 
-### 🚧 Pendente
-- [ ] 🌐 Finalizar propagação DNS do domínio próprio
-- [ ] ✏️ Atualizar `VITE_API_URL` e `og:url` com os endereços finais de produção, após domínio propagado
-- [ ] 📱 Revisão completa de responsividade em dispositivos reais
+### 🚧 Pendente (baixa prioridade)
+- [ ] 🖼️ Tratamento visual da imagem de planta baixa na galeria (fundo branco destoa das fotos reais)
+- [ ] 📱 Revisão de responsividade em mais dispositivos reais além do já corrigido (paisagem mobile)
 
 ---
 
@@ -188,17 +202,18 @@ VITE_API_URL=http://localhost:8080
 
 - 🎨 No Tailwind v4, `@theme` gera classes utilitárias automaticamente (`bg-charcoal`, etc.); `:root` (CSS puro) não
 - 🎯 A Lucide removeu ícones de marca na v1.0 — para logos como Instagram/WhatsApp, a alternativa é `@icons-pack/react-simple-icons`
-- 🔧 CORS precisa ser liberado no **backend** para a origem do frontend — em produção, a URL de preview da Vercel muda a cada deploy, então vale usar `allowedOriginPatterns` com wildcard (`*.vercel.app`) até o domínio próprio estar pronto
-- 💀 Substituir "seção desaparece se a API demorar" por um **estado de skeleton explícito** (`loading` / `success` / `error`) evita que um cold start do backend pareça um site quebrado
-- 📐 Pra alinhar cards com quantidade de informação diferente (ex: um card tem "área de jardim", o outro não), reservar o espaço com `opacity-0` em vez de simplesmente não renderizar a linha mantém a altura dos cards idêntica
-- 🔗 Reconectar um repositório errado na Vercel pode não dever gerar um novo deploy sozinho — um commit vazio (`git commit --allow-empty`) força a Vercel a reconstruir do zero a partir da conexão corrigida
-- 🌐 Ao configurar DNS no Registro.br, a tela "Alterar Servidores DNS" é para *delegar* o DNS a outro provedor — os registros individuais (`A`, `CNAME`) ficam em uma seção separada ("Configurar zona DNS" / "Configurar endereçamento")
+- 💀 Substituir "seção desaparece se a API demorar" por um **estado de skeleton explícito** evita que um cold start do backend pareça um site quebrado
+- 📐 Pra alinhar cards com quantidade de informação diferente, reservar o espaço com `opacity-0` em vez de simplesmente não renderizar a linha mantém a altura dos cards idêntica
+- 📱 `min-h-screen` quebra em celulares na orientação paisagem (pouca altura de viewport comprime o conteúdo). Solução: variante de media query por `max-height` (`[@media(max-height:500px)]:...`), já que o Tailwind não tem um breakpoint nativo pra isso — `landscape:` sozinho não resolve, pois também dispara em tablets onde não há problema de espaço
+- 🌐 Ao configurar DNS no Registro.br, a tela "Alterar Servidores DNS" é para *delegar* o DNS a outro provedor — os registros individuais (`A`, `CNAME`) ficam em "Configurar zona DNS" (modo avançado)
+- 🔗 Reconectar um repositório errado na Vercel pode não gerar um novo deploy sozinho — um commit vazio (`git commit --allow-empty`) força a reconstrução a partir da conexão corrigida
+- ⚖️ Seções de política de privacidade que citam operadores internacionais (Neon, Brevo) devem declarar explicitamente a transferência internacional de dados, conforme art. 33 da LGPD
 
 ---
 
 ## 🏢 Sobre a incorporadora
 
-**MK2 Incorporadora** — atuação desde 2010, desenvolvendo empreendimentos residenciais pautados em planejamento, responsabilidade e qualidade construtiva.
+**MK2 Incorporadora** e **RAC Imóveis** — parceria conjunta neste empreendimento, unindo experiência de mercado e expertise técnica em incorporação.
 
 ---
 
