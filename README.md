@@ -191,10 +191,8 @@ VITE_API_URL=http://localhost:8080
 - [x] Correção de layout do Hero em mobile paisagem
 - [x] Deploy em produção na Vercel, com domínio próprio e SSL
 - [x] `VITE_API_URL` e `og:url` apontando para os endereços finais de produção
-
-### 🚧 Pendente (baixa prioridade)
-- [ ] 🖼️ Tratamento visual da imagem de planta baixa na galeria (fundo branco destoa das fotos reais)
-- [ ] 📱 Revisão de responsividade em mais dispositivos reais além do já corrigido (paisagem mobile)
+- [x] Tratamento visual da imagem de planta baixa na galeria (fundo branco destoa das fotos reais)
+- [x] Revisão de responsividade em mais dispositivos reais além do já corrigido (paisagem mobile)
 
 ---
 
