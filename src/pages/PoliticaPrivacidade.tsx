@@ -51,7 +51,7 @@ interface SecaoProps {
               Política de Privacidade
             </h1>
             <p className="text-charcoal/60 text-sm mt-3">
-              Última atualização: 13 de agosto de 2026
+              Última atualização: 16 de setembro de 2026
             </p>
           </div>
         </header>
@@ -162,8 +162,20 @@ interface SecaoProps {
             </Secao>
   
             <Secao numero="09" titulo="Cookies">
-              <p>Este site não utiliza cookies de rastreamento, análise de comportamento ou publicidade (como Google Analytics ou Meta Pixel). Utilizamos apenas os recursos técnicos estritamente necessários para o funcionamento do site e do formulário de contato.</p>
-            </Secao>
+            <p>
+              Este site utiliza o Google Tag Manager para gerenciar ferramentas de
+              análise e publicidade, que podem incluir cookies de rastreamento,
+              mensuração de campanhas e análise de comportamento de navegação (como
+              Google Analytics e Google Ads). Essas ferramentas nos ajudam a entender
+              como os visitantes utilizam o site e a mensurar a eficácia de nossas
+              campanhas de divulgação.
+            </p>
+            <p>
+              Você pode gerenciar ou bloquear cookies diretamente nas configurações
+              do seu navegador. Note que desativar cookies pode afetar algumas
+              funcionalidades do site.
+            </p>
+          </Secao>
   
             <Secao numero="10" titulo="Alterações desta política">
               <p>Esta política pode ser atualizada periodicamente para refletir melhorias no site ou mudanças na legislação. A data da última atualização estará sempre indicada no topo desta página.</p>
